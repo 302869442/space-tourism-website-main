@@ -1,0 +1,10 @@
+//create a function that convert pixels to rems
+@function pxToRem($px) {
+    @return calc($px / 16)+ 'rem';
+}
+//create a function that converts rems to pixels
+@function remToPx($rem) {
+    @return calc($rem * 16) + "px";
+}
+
+@debug remToPx(65);

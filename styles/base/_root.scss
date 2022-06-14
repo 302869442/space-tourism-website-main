@@ -1,0 +1,36 @@
+@use "../abstracts/" as *;
+
+:root {
+  @each $type, $shades in $colors {
+    @each $shade, $value in $shades {
+      --clr-#{$type}-#{$shade}: #{$value};
+    }
+  }
+  //loop over each screen size and generate the font sizes
+  @each $screen-size, $font-size in $font-sizes {
+    @if $screen-size == small {
+      @each $size, $value in $font-size {
+        //generate font-size variable
+        --fs-#{$size}: #{$value};
+      }
+    }
+    @if $screen-size == medium {
+      @include mq(medium) {
+        @each $size, $value in $font-size {
+          --fs-#{$size}: #{$value};
+        }
+      }
+    }
+    @if $screen-size == large {
+      @include mq(large) {
+        @each $size, $value in $font-size {
+          //generate font-size variable
+          --fs-#{$size}: #{$value};
+        }
+      }
+    }
+  }
+  --ff-primary: 'Bellefair', sans-serif;
+  --ff-secondary: 'Barlow Condensed', sans-serif;
+  --ff-paragraph: 'Barlow', sans-serif;
+}

@@ -1,0 +1,103 @@
+@use '../abstracts/' as *;
+
+.primary-navigation{
+    position: fixed;
+    display: none;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+
+    height: 100%;
+    width: #{pxToRem(254)};
+    @supports(backdrop-filter: blur(81.54px)){
+        background: hsla(0, 0%, 100%, 0.04);
+        backdrop-filter: blur(81.54px);
+    }
+    background: hsla(0, 0%, 100%, 0.4);
+    z-index: 99;
+    .navbar{
+        margin-block: #{pxToRem(118)};
+        font-size: 1rem;
+        padding-inline: 2em 0;
+        @include flex(column, center, flex-start);
+        gap: 2em;
+        letter-spacing: 2.7px;
+
+    }
+    .nav-item{
+        position: relative;
+        width: 100%;
+    }
+    .nav-link{
+        display: inline-block;
+        width: 100%;
+        &:hover:after{
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 100%;
+            top: 0;
+            right: 0;
+            background-color: var(--clr-primary-100);
+            opacity: .5;
+        }
+        &.active::after{
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 100%;
+            right: 0;
+            background-color: var(--clr-primary-100);
+        }
+    }
+    .nav-logo{
+        position: absolute;
+        top: 1.5rem;
+        left: 1.5rem;
+
+    }
+}
+.open{
+    display: block;
+    transform: translateX(0);
+    transition: transform 0.5s ease-in-out;
+}
+
+.navbar-secondary{
+    display: flex;
+    gap: 1.75em;
+    margin-inline: auto;
+
+    .nav-item{
+        position: relative;
+        width: 100%;
+        padding-block: .5rem;
+        text-align: center;
+        &:hover::after{
+            content: '';
+            position: absolute;
+            width: 36px;
+            height: 3px;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            background-color: var(--clr-primary-100);
+            opacity: .5;
+        }
+        &.active::after{
+            content: '';
+            position: absolute;
+            width: 36px;
+            height: 3px;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            background-color: var(--clr-primary-100);
+        }
+    }
+}
+.secondary-navigation{
+    display: flex;
+    margin-bottom: 1.25rem;
+}

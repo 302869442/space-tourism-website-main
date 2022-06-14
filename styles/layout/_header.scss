@@ -1,0 +1,7 @@
+@use '../abstracts/' as *;
+
+header{
+    @include flex(column, center, center);
+    padding-inline: 1.5rem;
+    margin-block: 4em;
+}

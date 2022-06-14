@@ -1,0 +1,33 @@
+@use 'variables' as *;
+@use 'sass:map';
+
+
+@mixin mq($breakpoint){
+    //get the breakpoint value from the map using map-get
+    $size: map.get($breakpoints, $breakpoint);
+    @media (min-width: $size){
+        @content;
+    }
+}
+
+//create a mixin for a before element
+@mixin before($content: ''){
+    content: $content;
+    position: absolute;
+
+}
+//create a mixin for a after element
+@mixin after($content: ''){
+    content: $content;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+//create a mixin for flex-box
+@mixin flex($direction: row, $justify: space-between, $align: center, $wrap: wrap){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+}

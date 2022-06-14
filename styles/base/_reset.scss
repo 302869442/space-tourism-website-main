@@ -1,0 +1,72 @@
+@use "sass:color";
+@use "../abstracts/" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body{
+    font-family: var(--ff-primary);
+    font-size: var(--fs-400);
+    width: 100vw;
+    height: 100vh;
+    line-height: 1.67;
+    background-size: cover;
+    // overflow: auto;
+    overflow-x: hidden;
+    background-repeat: no-repeat;
+    background-image: url('../pages/assets/home/background-home-mobile.jpg');
+    background-color: black;
+}
+nav{
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  color: var(--clr-primary-100);
+  text-transform: uppercase;
+  font-weight: 400;
+  font-style: normal;
+  height: min-content;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+p{
+    color: var(--clr-accent-200);
+    font-family: var(--ff-paragraph);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    color: var(--clr-primary-100);
+    font-family: var(--ff-secondary);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+span{
+    font-weight: 700;
+}
+hr{
+    background-color: hsla(231, 15%, 26%, 1);
+    margin: 0;
+    height: 1px;
+    padding: 0;
+    border: none;
+    margin: 2rem 1.5rem;
+    // width: 100%;
+}

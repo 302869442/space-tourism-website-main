@@ -1,0 +1,21 @@
+//generate classes for the text colors
+.text-white {
+    color: var(--clr-primary-100);
+}
+.text-black {
+    color: var(--clr-primary-900);
+}
+.text-lightblue {
+    color: var(--clr-accent-200);
+}
+//generate classes for text alignments
+.text-left {
+    text-align: left;
+}
+.text-center {
+    text-align: center;
+}
+.text-right {
+    text-align: right;
+}
+//generate classes for text sizes

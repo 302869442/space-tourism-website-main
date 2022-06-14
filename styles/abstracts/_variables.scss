@@ -1,0 +1,20 @@
+@use "sass:color";
+@use 'functions' as *;
+
+$colors: (
+  primary: (
+    100: hsla(0, 100%, 100%, 1),
+    900: hsl(230, 35%, 7%),
+  ),
+  accent: (
+    200: hsla(231, 79%, 90%, 1),
+    500: hsla(0, 0%, 59%, 1),
+  ),
+);
+
+//create breakpoints map
+$breakpoints: (
+  small: 40em,
+  medium: 60em,
+  large: 80em
+);

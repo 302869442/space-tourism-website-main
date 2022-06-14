@@ -1,0 +1,7 @@
+//create utillity classes with a for loop for the grid column amount
+@for $i from 1 through 12{
+    .grid-col-#{$i}{
+        display: grid;
+        grid-template-columns: repeat(#{$i}, 1fr);
+    }
+}
